@@ -8,10 +8,11 @@
     "start": "node app"
   },
   "dependencies": {
+    "body-parser": "*",
+    "cors": "*",
     "express": "*",
     "mongoose": "*",
-    "cors": "*",
-    "body-parser": "*"
+    "mongoose-simple-random": "^0.4.1"
   },
   "author": "Braydon Coyer",
   "license": "ISC"

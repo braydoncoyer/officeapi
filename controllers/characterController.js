@@ -16,6 +16,22 @@ exports.view = async function (req, res) {
     })
 };
 
+
+// Get random Character
+exports.random = (req, res) => {
+    Character.findOneRandom((err, character) => {
+        if (err) {
+            res.json({
+                status: "err",
+                message: err
+            });
+        }
+        res.json({
+            data: character
+        });
+    });
+};
+
 // Get Character by ID
 exports.index = (req, res) => {
     Character.findById(req.params.character_id, (err, character) => {

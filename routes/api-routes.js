@@ -20,8 +20,13 @@ router.route('/characters')
     .get(characterController.view)
     .post(characterController.new);
 
+router.route('/characters/random')
+    .get(characterController.random);
+
 router.route('/characters/:character_id')
     .get(characterController.index);
+
+
 
 
 // Episode Routes
