@@ -13,6 +13,7 @@ router.get('/', function (req, res) {
 const characterController = require('../controllers/characterController');
 const crewController = require('../controllers/crewController');
 const episodeController = require('../controllers/episodeController');
+const quoteController = require('../controllers/quoteController');
 
 
 // Character Routes
@@ -48,7 +49,9 @@ router.route('/episodes')
     .post(episodeController.new);
 
 // Quote Routes
-
+router.route('/quotes')
+    .get(quoteController.view)
+    .post(quoteController.new);
 
 
 // Export API routes
