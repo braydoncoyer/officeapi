@@ -35,6 +35,8 @@ exports.new = function (req, res) {
     let episode = new Episode();
     episode.title = req.body.title ? req.body.title : episode.title;
     episode.description = req.body.description ? req.body.description : episode.description;
+    episode.writer = req.body.writer ? req.body.writer : episode.writer;
+    episode.director = req.body.director ? req.body.director : episode.director;
     episode.airDate = req.body.airDate ? req.body.airDate : episode.airDate;
 
     episode.save(function (err) {
