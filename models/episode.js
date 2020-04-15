@@ -10,6 +10,13 @@ const EpisodeSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    writer: {
+        type: String,
+        required: true
+    },
+    director: {
+        type: String
+    },
     airDate: {
         type: Date,
         required: true

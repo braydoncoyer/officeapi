@@ -11,6 +11,7 @@ router.get('/', function (req, res) {
 });
 
 const characterController = require('../controllers/characterController');
+const crewController = require('../controllers/crewController');
 const episodeController = require('../controllers/episodeController');
 
 
@@ -20,8 +21,24 @@ router.route('/characters')
     .get(characterController.view)
     .post(characterController.new);
 
+router.route('/characters/random')
+    .get(characterController.random);
+
 router.route('/characters/:character_id')
     .get(characterController.index);
+
+
+// Crew Routes
+router.route('/crew')
+    .get(crewController.view)
+    .post(crewController.new);
+
+router.route('/crew/random')
+    .get(crewController.random);
+
+router.route('/crew/:crew_id')
+    .get(crewController.index);
+
 
 
 // Episode Routes

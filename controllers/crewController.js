@@ -1,9 +1,9 @@
-Character = require('../models/character');
+Crew = require('../models/crew');
 
 
 // Get all Characters
 exports.view = async function (req, res) {
-    Character.get((err, characters) => {
+    Crew.get((err, crew) => {
         if(err) {
             res.json({
                 status: "err",
@@ -11,7 +11,7 @@ exports.view = async function (req, res) {
             });
         }
         res.json({
-            data: characters
+            data: crew
         });
     })
 };
@@ -19,7 +19,7 @@ exports.view = async function (req, res) {
 
 // Get random Character
 exports.random = (req, res) => {
-    Character.findOneRandom((err, character) => {
+    Crew.findOneRandom((err, crew) => {
         if (err) {
             res.json({
                 status: "err",
@@ -27,20 +27,20 @@ exports.random = (req, res) => {
             });
         }
         res.json({
-            data: character
+            data: crew
         });
     });
 };
 
 // Get Character by ID
 exports.index = (req, res) => {
-    Character.findById(req.params.character_id, (err, character) => {
+    Crew.findById(req.params.crew_id, (err, crew) => {
         if(err) {
             res.send(err);
         };
 
         res.json({
-            data: character
+            data: crew
         });
     })
 };
@@ -48,17 +48,17 @@ exports.index = (req, res) => {
 
 // Create new Character
 exports.new = function (req, res) {
-    let character = new Character();
-    character.firstname = req.body.firstname ? req.body.firstname : character.firstname;
-    character.lastname = req.body.lastname ? req.body.lastname : character.lastname;
+    let crew = new Crew();
+    crew.name = req.body.name ? req.body.name : crew.name;
+    crew.role = req.body.role ? req.body.role : crew.role;
 
-    character.save(function (err) {
+    crew.save(function (err) {
         if(err) {
             res.json(err);
         }
         res.json({
-            message: 'New character created!',
-            data: character
+            message: 'New crew member created!',
+            data: crew
         })
     })
 };

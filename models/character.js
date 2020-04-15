@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const config = require('../config/database');
+const random = require('mongoose-simple-random');
 
 // Character Schema
 
@@ -11,6 +11,8 @@ const CharacterSchema = mongoose.Schema({
         type: String
     }
 });
+
+CharacterSchema.plugin(random);
 
 const Character = module.exports = mongoose.model('character', CharacterSchema);
 
