@@ -1,4 +1,3 @@
-// Filename: api-routes.js
 // Initialize express router
 let router = require('express').Router();
 
@@ -17,7 +16,6 @@ const quoteController = require('../controllers/quoteController');
 
 
 // Character Routes
-
 router.route('/characters')
     .get(characterController.view)
     .post(characterController.new);
@@ -43,15 +41,26 @@ router.route('/crew/:crew_id')
 
 
 // Episode Routes
-
 router.route('/episodes')
     .get(episodeController.view)
     .post(episodeController.new);
+
+router.route('/episodes/random')
+    .get(episodeController.random);
+
 
 // Quote Routes
 router.route('/quotes')
     .get(quoteController.view)
     .post(quoteController.new);
+
+router.route('/quotes/random')
+    .get(quoteController.random);
+
+router.route('/quotes/:quote_id')
+    .get(quoteController.index);
+
+
 
 
 // Export API routes

@@ -39,7 +39,6 @@ const db = mongoose.connection;
 app.use(cors());
 
 
-
 // Set static folder
 app.use(express.static(path.join(__dirname, 'client')));
 

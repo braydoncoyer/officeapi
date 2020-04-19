@@ -30,6 +30,22 @@ exports.index = (req, res) => {
 };
 
 
+// Get random Episode
+exports.random = (req, res) => {
+    Episode.findOneRandom((err, episode) => {
+        if (err) {
+            res.json({
+                status: "err",
+                message: err
+            });
+        }
+        res.json({
+            data: episode
+        });
+    });
+};
+
+
 // Create new Character
 exports.new = function (req, res) {
     let episode = new Episode();
