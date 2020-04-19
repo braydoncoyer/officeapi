@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import './codeblock.scss';
+@import './variables.scss';
+
+@font-face {
+    font-family: typist;
+    src: url(fonts/Typist.ttf) format("opentype");
+}
+
+* {
+    font-family: 'typist', Arial, Helvetica, sans-serif;
+    line-height: 20px;
+}
+
+
