@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const random = require('mongoose-simple-random');
 
 // Episode Schema
 const EpisodeSchema = mongoose.Schema({
@@ -22,6 +23,8 @@ const EpisodeSchema = mongoose.Schema({
         required: true
     }
 });
+
+EpisodeSchema.plugin(random);
 
 const Episode = module.exports = mongoose.model('episode', EpisodeSchema);
 

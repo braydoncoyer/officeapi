@@ -1,0 +1,144 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="fullscreen_container">
+  <div class="content" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+    <div class="welcome">
+      <div class="welcome__logo">
+        <img fxFlexFill src="../assets/officeApiLogo.png" alt="office api logo">
+      </div>
+      <div class="welcome__explanation">
+        <p><b>officeapi.dev</b> is a free JSON API for quotes, facts and information on NBC’s beloved mockumentary series The Office.</p>
+      </div>
+
+      <h1 fxLayoutAlign="center">Try An Example</h1>
+      <div class="welcome__example" fxLayout="row" fxLayoutGap="10px">
+        <div fxFlex="40%" fxFlex.xs="35%" class="welcome__example-http-container">
+            <span >https://officeapi.dev/api/</span>
+        </div>
+        <input fxFlex="50%" fxFlex.xs="50%" type="text" name="apiRequest" placeholder="quotes/random" [(ngModel)]="inputValue">
+        <button fxFlex="10%" fxFlex.xs="15%" (click)="fetchData()">Request</button>
+      </div>
+      <div class="welcome__example-suggestions">
+        <p class="welcome__example-suggestions-item">try <span (click)="suggestionClicked('episodes/')" class="welcome__example-suggestions-item-italic">episodes/</span></p>
+        <p class="welcome__example-suggestions-item">try <span (click)="suggestionClicked('characters/')" class="welcome__example-suggestions-item-italic">characters/</span></p>
+      </div>
+      <div *ngIf="response" class="welcome__example-result">
+        <prism-block *ngIf="response" [code]="response | json"></prism-block>
+      </div>
+      <p class="welcome__example-disclaimer">* Max of 5 results shown. Actual data length will vary.</p>
+    </div>
+
+    <div class="media">
+        <img fxFlexFill fxLayoutAlign="center" src="../assets/2.-meeting-room,-prison-mike.png" alt="Prison Mike">
+        <h1 fxLayoutAlign="center">Documentation</h1>
+    </div>
+
+    <div class="documentation">
+      <section class="introduction">
+          <h2>Introduction</h2>
+          <p>Welcome to the officeapi.dev! This documentation should help familiarise yourself with the resources available and how to consume them with HTTP requests.</p>
+
+          <h3>What is a REST API?</h3>
+          <p>An API is an application programming interface - in short, it’s a set of rules and instructions that lets programs talk to each other, exposing data and functionality across the internet in a consistent format.</p>
+          <p>REST stands for Representational State Transfer. This is an architectural pattern that describes how distributed systems can expose a consistent interface. When people use the term ‘REST API,’ they are generally referring to an API accessed via HTTP protocol at a predefined set of URLs.</p>
+          <p>These URLs represent various resources - any information or content accessed at that location, which can be returned as JSON, HTML, audio files, or images. Often, resources have one or more methods that can be performed on them over HTTP, like GET, POST, PUT and DELETE.</p>
+          <p><b>The officeapi.dev only allows you to GET data; all other operations are prohibited.</b></p>
+      </section>
+
+      <section class="usage">
+        <h2>Usage</h2>
+        <p>Let's make our first API request to the officeapi.dev!</p>
+        <p>Open a terminal and use curl or <a href="https://httpie.org" target="_blank">httpie</a> to make the following request to get a character from the API: </p>
+        <prism-block [code]="'https://officeapi.dev/api/characters/5e93b4a43af44260882e33b0'"></prism-block>
+        <p>After making that request, you will get a response much like the following:</p>
+        <prism-block [code]="firstAPIResponse"></prism-block>
+        <p>If your response looks slightly different, that's okay - we've most likely updated the response with new data.</p>
+      </section>
+
+      <img fxFlexFill fxLayoutAlign="center" src="../assets/1.-mike-office.png" alt="Michael's office">
+
+      <section class="resources">
+        <h2>Resources</h2>
+        <p>The following resources are available through the officeapi:</p>
+        <ul>
+          <li><span class="tag">quotes</span> string -- the URL root for quote resources</li>
+          <li><span class="tag">characters</span> string -- the URL root for character resources</li>
+          <li><span class="tag">episodes</span> string -- the URL root for episode resources</li>
+          <li><span class="tag">crew</span> string -- the URL root for crew resources</li>
+        </ul>
+        <br>
+        <hr>
+        <br>
+        <div class="resource resources__quotes">
+            <h3>Quotes</h3>
+            <p>A quote resource is a phrase said by a character.</p>
+            <h4>Endpoints</h4>
+            <ul>
+              <li><span class="tag">/quotes/</span> -- get a list of all quotes in our database.</li>
+              <li><span class="tag">/quotes/:id/</span> -- get a specific quote by id.</li>
+<!--              <li><span class="tag">/quotes/character/:id</span> &#45;&#45; get a list of all quotes from a specific character.</li>-->
+              <li><span class="tag">/quotes/random</span> -- get a random quote from any character.</li>
+            </ul>
+
+            <p>As an example, if I make a request for a random quote, the response will be similar to the following:</p>
+            <br>
+            <p>Example request:</p>
+            <prism-block [code]="'https://officeapi.dev/quotes/random'"></prism-block>
+
+            <prism-block [code]="randomQuoteCode"></prism-block>
+        </div>
+
+        <div class="resource resources__characters">
+            <h3>Characters</h3>
+            <p>A character resource is an entity representing a personality portrayed on the tv show.</p>
+            <h4>Endpoints</h4>
+            <ul>
+              <li><span class="tag">/characters/</span> -- get a list of all characters in our database.</li>
+              <li><span class="tag">/characters/:id/</span> -- get a specific character by id.</li>
+              <li><span class="tag">/characters/random</span> -- get a random character in our database.</li>
+            </ul>
+
+            <p>As an example, if I wanted to get Jim Halpert back from the database, the request would look like the following:</p>
+            <br>
+            <p>Example request:</p>
+            <prism-block [code]="'https://officeapi.dev/characters/2'"></prism-block>
+
+            <prism-block [code]="characterResourceResponse"></prism-block>
+        </div>
+
+        <div class="resource resources__episodes">
+            <h3>Episodes</h3>
+            <p>An episode resource is an entity representing a specific installment from the tv show.</p>
+            <p>Our database contains information for each episode from the series.</p>
+            <h4>Endpoints</h4>
+            <ul>
+              <li><span class="tag">/episodes/</span> -- get a list of all episodes in our database.</li>
+              <li><span class="tag">/episodes/:id/</span> -- get a specific episode by id.</li>
+              <li><span class="tag">/episodes/random</span> -- get a random episode from our database.</li>
+            </ul>
+
+            <p>As an example, if I wanted to get the data related to the pilot episode in season one, the request would look like the following:</p>
+            <br>
+            <p>Example request:</p>
+            <prism-block [code]="'https://officeapi.dev/episodes/70'"></prism-block>
+
+            <prism-block [code]="episodeResourceResponse"></prism-block>
+        </div>
+
+      </section>
+    </div>
+
+      <!-- <img fxFlexFill fxLayoutAlign="center" src="../assets/2.-jim-and-pam.png" alt=""> -->
+
+    <section fxLayout="column">
+        <img fxFlexFill src="../assets/4.-office-building.png" alt="The Office Building">
+        <div class="footer">
+          <p>The officeapi.dev is free and will always be free! However, maintaining this service costs $$$ and we are but poor programmers. If you feel so inclined, you can make us more productvie and even eternally grateful by buying us a coffee HERE.</p>
+
+          <p><b>DISCLAIMER:</b> This website and its creators are not affiliated with the NBC, The Office, or any other motion picture or television corporation, parent, or affiliate corporation. All motion pictures, products, and brands mentioned on this website are the respective trademarks and copyrights of their owners. All material on this website is intended for humorous entertainment (satire) purposes only. The content on this website is not necessarily true and should not be regarded as truth.</p>
+        </div>
+    </section>
+
+  </div>
+</div>
+
+

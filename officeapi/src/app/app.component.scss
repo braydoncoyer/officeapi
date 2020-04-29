@@ -1,0 +1,184 @@
+@import '../variables.scss';
+
+@font-face {
+  font-family:"American Typewriter";
+  src: url("../fonts/AmericanTypewriterRegular.ttf") format("truetype");
+}
+
+
+* {
+  color: #2d2d2d;
+}
+
+.fullscreen_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  background: #BFC3C6;
+}
+
+.welcome {
+  margin-top: 25px;
+
+  &__explanation {
+    margin: 50px 0;
+  }
+
+  &__example > span {
+    line-height: 40px;
+    height: 40px;
+    background-color: $dark-office-blue;
+    color: #FCFBFD;
+    text-align: center;
+    border-bottom: solid 3px black;
+  }
+
+  &__example > input {
+    height: 40px;
+    border: none;
+    padding: 7px;
+    border-bottom: solid 3px $light-grey;
+  }
+
+  &__example > button {
+    cursor: pointer;
+    border: none;
+    background-color: #6D8A8D;
+    border-bottom: solid 3px #293B49;
+    color: white;
+  }
+
+  &__example-result {
+    margin-top: 15px;
+    background-color: #FCFBFD;
+    color: #2d2d2d;
+  }
+
+  &__example-http-container {
+    line-height: 40px;
+    height: 40px;
+    background-color: $grey;
+    text-align: center;
+    border-bottom: solid 3px $dark-grey;
+    & > span {
+      color: #FCFBFD;
+    }
+  }
+
+  &__example-suggestions{
+    display: flex;
+    font-size: 12px;
+
+    &-item {
+      cursor: pointer;
+      margin: 5px 0;
+      margin-right: 20px;
+
+      &-italic {
+        font-size: 14px;
+        font-weight: 1000;
+      }
+    }
+  
+  }
+
+  &__example-disclaimer {
+    font-size: 8px;
+  }
+}
+
+section {
+  margin: 3rem 0;
+}
+
+.media {
+  margin: 45px 0;
+}
+
+.footer {
+  font-size: 10px;
+}
+
+.tag {
+  color: white;
+  padding: 4px;
+  background-color: $dark-office-blue;
+  border-radius: 5px;
+}
+
+
+ul > li {
+  margin: 10px 0;
+}
+
+.resource {
+  margin-bottom: 6rem;
+}
+
+
+
+
+
+
+/* --------------------- MEDIA QUERIES --------------------- */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .content {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .welcome {
+    margin-top: 10px;
+
+    &__example-http-container {
+      font-size: 10px;
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .content {
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .content {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+
+///* Large devices (laptops/desktops, 992px and up) */
+//@media only screen and (min-width: 992px) {
+//  .content {
+//    width: 50%;
+//    margin: 0 auto;
+//  }
+//}
+
+/* iPad Pro Portrait */
+@media only screen and (min-width: 1024px) {
+  .content {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+/* Extra Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1026px) {
+  .content {
+    width: 40%;
+    margin: 0 auto;
+  }
+}
+
+
