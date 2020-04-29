@@ -25,31 +25,44 @@ export class AppComponent implements OnInit {
     "data": {
       "_id": "5e9668186a66e65486e244a5",
       "content": "Bears, Beets, Battlestar Galactica.",
-      "character": "5e93b4f03af44260882e33b1",
+      "character": {
+        "_id": "5e93b4f03af44260882e33b1",
+        "firstname": "Jim",
+        "lastname": "Halpert",
+        "__v": 0
+      },
       "__v": 0
     }
  }
   `;
 
   characterResourceResponse = `
-  {
-    "id": 2,
-    "firstName": "Jim",
-    "lastName": "Halpert"
-  }
-  `
+    "data": {
+      "_id": "5e93b4f03af44260882e33b1",
+      "firstname": "Jim",
+      "lastname": "Halpert",
+      "__v": 0
+    }
+  `;
 
   episodeResourceResponse = `
-  {
-    "id": 70,
-    "episodeTitle": "Pilot",
-    "episodeDescription": "A documentary crew gives a firsthand introduction to the staff of the Scranton branch of the Dunder Mifflin Paper Company, managed by Michael Scott.",
-    "season": 1,
-    "episode": 1,
-    "director": "Ken Kwapis",
-    "airDate": "3905-04-24T05:00:00.000+0000"
+  "data": {
+    "_id": "5e94d646f733a1332868e1dc",
+    "title": "Pilot",
+    "description": "A documentary crew gives a firsthand introduction to the staff of the Scranton branch of the Dunder Mifflin Paper Company, managed by Michael Scott.",
+    "airDate": "2005-03-24T06:00:00.000Z",
+    "__v": 0
   }
-  `
+  `;
+
+  crewResourceResponse = `
+  "data": {
+    "_id": "5e9524139511994a07f9a317",
+    "name": "Michael Schur",
+    "role": "Writer/Actor",
+    "__v": 0
+  }
+  `;
 
   constructor(private apiService: ApiService, private ref: ChangeDetectorRef) {}
 
