@@ -1,9 +1,9 @@
 Episode = require('../models/episode');
 
 
-// Get all Characters
+// Get all Episodes
 exports.view = async function (req, res) {
-    Episode.get((err, episodes) => {
+    Episode.find().populate('writer').populate('director').exec((err, episode) => {
         if(err) {
             res.json({
                 status: "err",
@@ -11,9 +11,9 @@ exports.view = async function (req, res) {
             });
         }
         res.json({
-            data: episodes
+            data: episode
         });
-    })
+    });
 };
 
 // Get Episode by ID

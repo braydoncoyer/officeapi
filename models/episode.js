@@ -12,11 +12,12 @@ const EpisodeSchema = mongoose.Schema({
         required: true
     },
     writer: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId, ref: 'crew',
         required: true
     },
     director: {
-        type: String
+        type: mongoose.Schema.Types.ObjectId, ref: 'crew',
+        required: true
     },
     airDate: {
         type: Date,
