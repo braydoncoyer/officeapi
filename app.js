@@ -40,10 +40,15 @@ app.use(cors());
 
 
 // Set static folder
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Body Parser Middleware
 app.use(bodyParser.json());
+
+// Define base url
+app.get('/', (req, res) => {
+    res.send('Invalid Enpoint!');
+});
 
 // Define base url
 app.get('*', (req, res) => {
