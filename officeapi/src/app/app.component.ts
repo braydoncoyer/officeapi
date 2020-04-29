@@ -73,11 +73,11 @@ export class AppComponent implements OnInit {
   }
 
   fetchData() {
-    this.apiService.get(this.inputValue).subscribe(result => {
+    this.apiService.get(this.inputValue).subscribe((result:any) => {
       this.response = null;
       this.ref.detectChanges();
-      if (result.length > 10) {
-        this.response = result.slice(0, 5);
+      if (result.data.length > 5) {
+        this.response = result.data.slice(0, 5);
       } else {
         this.response = result;
       }
