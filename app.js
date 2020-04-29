@@ -50,10 +50,10 @@ app.get('/', (req, res) => {
     res.send('Invalid Enpoint!');
 });
 
-// Define base url
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/index.html'));
-});
+// // Define base url
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'public/index.html'));
+// });
 
 // Use API routes
 app.use('/api', apiRoutes);
