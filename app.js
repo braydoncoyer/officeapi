@@ -53,6 +53,7 @@ app.get('*', (req, res) => {
 // Use API routes
 app.use('/api', apiRoutes);
 
+
 // Listen on the port defined
 app.listen(port, () => {
     console.log('Server is running on port ' + port);
