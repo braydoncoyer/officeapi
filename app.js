@@ -46,8 +46,8 @@ app.use(express.static(path.join(__dirname, 'client')));
 app.use(bodyParser.json());
 
 // Define base url
-app.get('/', (req, res) => {
-    res.send('Invalid endpoint');
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 // Use API routes
