@@ -16,7 +16,7 @@ exports.view = async function (req, res) {
     })
 };
 
-// Get Character by ID
+// Get Episode by ID
 exports.index = (req, res) => {
     Episode.findById(req.params.episode_id, (err, episodes) => {
         if(err) {

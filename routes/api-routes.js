@@ -48,6 +48,9 @@ router.route('/episodes')
 router.route('/episodes/random')
     .get(episodeController.random);
 
+router.route('/episodes/:episode_id')
+    .get(episodeController.index);
+
 
 // Quote Routes
 router.route('/quotes')

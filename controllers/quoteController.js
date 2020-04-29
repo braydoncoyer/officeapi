@@ -20,7 +20,7 @@ exports.view = async function (req, res) {
 
 // Get random Character
 exports.random = (req, res) => {
-    Quote.findOneRandom((err, quote) => {
+    Quote.findOneRandom( async (err, quote) => {
         if (err) {
             res.json({
                 status: "err",
@@ -49,8 +49,17 @@ exports.index = (req, res) => {
             res.send(err);
         };
 
-        res.json({
-            data: quote
+        Character.findById(quote.character, (err, character) => {
+            if(err) {
+                res.send(err);
+            };
+
+            const result = quote;
+            result.character = character;
+
+            res.json({
+                data: result
+            })
         });
     })
 };
@@ -72,3 +81,13 @@ exports.new = function (req, res) {
         })
     })
 };
+
+const findCharacterObject = (characterId) => {
+    Character.findById(characterId, (err, character) => {
+        if(err) {
+            res.send(err);
+        };
+
+        return character;
+    });
+}
