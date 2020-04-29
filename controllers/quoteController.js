@@ -1,4 +1,5 @@
 Quote = require('../models/quote');
+Character = require('../models/character');
 
 
 // Get all Quotes
@@ -26,8 +27,17 @@ exports.random = (req, res) => {
                 message: err
             });
         }
-        res.json({
-            data: quote
+        Character.findById(quote.character, (err, character) => {
+            if(err) {
+                res.send(err);
+            };
+
+            const result = quote;
+            result.character = character;
+
+            res.json({
+                data: result
+            })
         });
     });
 };
