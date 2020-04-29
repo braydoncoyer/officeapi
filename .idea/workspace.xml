@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2fa5aa9d-5709-4743-8cf8-86f76cc65ecf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/officeapi/src/app/services/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/officeapi/src/app/services/api.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/officeapi/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/officeapi/src/environments/environment.prod.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +57,7 @@
       <workItem from="1586812666086" duration="611000" />
       <workItem from="1586824550679" duration="4073000" />
       <workItem from="1587262610659" duration="1004000" />
-      <workItem from="1588200026980" duration="1031000" />
+      <workItem from="1588200026980" duration="2036000" />
     </task>
     <servers />
   </component>
