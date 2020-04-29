@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url: 'https://pure-savannah-17183.herokuapp.com/'
+  url: 'https://peaceful-tor-38952.herokuapp.com/api/'
 };
