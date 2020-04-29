@@ -12,23 +12,23 @@ export class AppComponent implements OnInit {
   inputValue = 'quotes/random';
 
   firstAPIResponse = `
-  {
-    "firstName": "Michael",
-    "id": 1,
-    "lastName": "Scott"
-  }
+    {
+      "_id": "5e93b4a43af44260882e33b0",
+      "firstname": "Michael",
+      "lastname": "Scott",
+      "__v": 0
+    },
   `;
 
   randomQuoteCode = `
   {
-    "id": 66,
-    "content": "Shut up about the sun. SHUT UP ABOUT THE SUN!",
-    "character": {
-        "id": 15,
-        "firstName": "Gabe",
-        "lastName": "Lewis"
+    "data": {
+      "_id": "5e9668186a66e65486e244a5",
+      "content": "Bears, Beets, Battlestar Galactica.",
+      "character": "5e93b4f03af44260882e33b1",
+      "__v": 0
     }
-  }
+ }
   `;
 
   characterResourceResponse = `

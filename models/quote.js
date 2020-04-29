@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const random = require('mongoose-simple-random');
 
 // Quote Schema
-
 const QuoteSchema = mongoose.Schema({
     content: {
         type: String,

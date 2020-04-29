@@ -18,8 +18,8 @@
         <button fxFlex="10%" fxFlex.xs="15%" (click)="fetchData()">Request</button>
       </div>
       <div class="welcome__example-suggestions">
-        <p class="welcome__example-suggestions-item">try <span (click)="suggestionClicked('characters/1')" class="welcome__example-suggestions-item-italic">characters/1</span></p>
-        <p class="welcome__example-suggestions-item">try <span (click)="suggestionClicked('quotes/35')" class="welcome__example-suggestions-item-italic">quotes/35</span></p>
+        <p class="welcome__example-suggestions-item">try <span (click)="suggestionClicked('episodes/')" class="welcome__example-suggestions-item-italic">episodes/</span></p>
+        <p class="welcome__example-suggestions-item">try <span (click)="suggestionClicked('characters/')" class="welcome__example-suggestions-item-italic">characters/</span></p>
       </div>
       <div *ngIf="response" class="welcome__example-result">
         <prism-block *ngIf="response" [code]="response | json"></prism-block>
@@ -48,7 +48,7 @@
         <h2>Usage</h2>
         <p>Let's make our first API request to the officeapi.dev!</p>
         <p>Open a terminal and use curl or <a href="https://httpie.org" target="_blank">httpie</a> to make the following request to get a character from the API: </p>
-        <prism-block [code]="'https://officeapi.dev/characters/1'"></prism-block>
+        <prism-block [code]="'https://officeapi.dev/api/characters/5e93b4a43af44260882e33b0'"></prism-block>
         <p>After making that request, you will get a response much like the following:</p>
         <prism-block [code]="firstAPIResponse"></prism-block>
         <p>If your response looks slightly different, that's okay - we've most likely updated the response with new data.</p>
@@ -63,6 +63,7 @@
           <li><span class="tag">quotes</span> string -- the URL root for quote resources</li>
           <li><span class="tag">characters</span> string -- the URL root for character resources</li>
           <li><span class="tag">episodes</span> string -- the URL root for episode resources</li>
+          <li><span class="tag">crew</span> string -- the URL root for crew resources</li>
         </ul>
         <br>
         <hr>
@@ -74,7 +75,7 @@
             <ul>
               <li><span class="tag">/quotes/</span> -- get a list of all quotes in our database.</li>
               <li><span class="tag">/quotes/:id/</span> -- get a specific quote by id.</li>
-              <li><span class="tag">/quotes/character/:id</span> -- get a list of all quotes from a specific character.</li>
+<!--              <li><span class="tag">/quotes/character/:id</span> &#45;&#45; get a list of all quotes from a specific character.</li>-->
               <li><span class="tag">/quotes/random</span> -- get a random quote from any character.</li>
             </ul>
 
