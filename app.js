@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
-const port = 3000;
+const port = process.env.PORT || 8080;
 
 // Configure DB
 mongoose.connect(config.database, {
@@ -40,18 +40,24 @@ app.use(cors());
 
 
 // Set static folder
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Body Parser Middleware
 app.use(bodyParser.json());
 
 // Define base url
 app.get('/', (req, res) => {
-    res.send('Invalid endpoint');
+    res.send('Invalid Enpoint!');
 });
+
+// // Define base url
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'public/index.html'));
+// });
 
 // Use API routes
 app.use('/api', apiRoutes);
+
 
 // Listen on the port defined
 app.listen(port, () => {

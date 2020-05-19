@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url: 'https://www.officeapi.dev'
+  url: 'https://officeapi.dev/api/'
 };
