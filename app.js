@@ -18,6 +18,13 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
+
+// Enable CORS Middleware
+// app.use(cors());
+
+
+
+
 const port = process.env.PORT || 8080;
 
 // Configure DB
@@ -40,10 +47,6 @@ mongoose.connection.on('error', (err) => {
 });
 
 const db = mongoose.connection;
-
-
-// Enable CORS Middleware
-app.use(cors());
 
 
 // Set static folder
