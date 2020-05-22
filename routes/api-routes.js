@@ -1,12 +1,5 @@
 // Initialize express router
 let router = require('express').Router();
-const cors = require('cors');
-const corsOptions = {
-    origin: '*',
-    optionsSuccessStatus: 200
-};
-
-router.use(cors(corsOptions));
 
 // Set default API response
 router.get('/', function (req, res) {
@@ -61,14 +54,14 @@ router.route('/episodes/:episode_id')
 
 // Quote Routes
 router.route('/quotes')
-    .get(cors(), quoteController.view)
-    .post(cors(), quoteController.new);
+    .get(quoteController.view)
+    .post(quoteController.new);
 
 router.route('/quotes/random')
-    .get(cors(), quoteController.random);
+    .get(quoteController.random);
 
 router.route('/quotes/:quote_id')
-    .get(cors(), quoteController.index);
+    .get(quoteController.index);
 
 
 

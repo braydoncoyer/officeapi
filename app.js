@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const mongoose = require('mongoose');
 const config = require('./config/database');
@@ -60,7 +61,7 @@ app.get('/', (req, res) => {
 // });
 
 // Use API routes
-app.use('/api', apiRoutes);
+app.use('/api', cors(), apiRoutes);
 
 
 // Listen on the port defined
