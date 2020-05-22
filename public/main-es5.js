@@ -366,13 +366,9 @@ var ApiService = /** @class */ (function () {
     function ApiService(http) {
         this.http = http;
     }
-    // get(endpoint: string): Observable<any> {
-    //   console.log(endpoint);
-    //   return this.http.get(`${environment.url}${endpoint}`);
-    // }
     ApiService.prototype.get = function (endpoint) {
-        console.log('new endpoint');
-        return this.http.get("" + _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].url);
+        console.log(endpoint);
+        return this.http.get("" + _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].url + endpoint);
     };
     ApiService.ctorParameters = function () { return [
         { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
@@ -405,7 +401,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 var environment = {
     production: false,
-    url: 'https://swapi.dev/api/people/1/'
+    url: 'http://localhost:8080/api/'
 };
 /*
  * For easier debugging in development mode, you can import the following file
