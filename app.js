@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const config = require('./config/database');
 
 const app = express();
+app.use(cors());
 
 const apiRoutes = require('./routes/api-routes');
 app.use(bodyParser.urlencoded({
@@ -16,13 +17,6 @@ app.use(bodyParser.json());
 
 //Enable CORS Middleware
 // app.use(cors(corsOptions));
-app.use(cors());
-app.options('*', cors());
-
-
-
-
-
 const port = process.env.PORT || 8080;
 
 // Configure DB
