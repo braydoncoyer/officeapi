@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'https://www.officeapi.dev/api/'
+  url: 'https://swapi.dev/api/people/1/'
 };
 
 /*
