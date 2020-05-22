@@ -2,16 +2,14 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200
+};
 const mongoose = require('mongoose');
 const config = require('./config/database');
 
 const app = express();
-
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
 
 const apiRoutes = require('./routes/api-routes');
 app.use(bodyParser.urlencoded({
@@ -19,8 +17,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-// Enable CORS Middleware
-// app.use(cors());
+//Enable CORS Middleware
+app.use(cors(corsOptions));
 
 
 
