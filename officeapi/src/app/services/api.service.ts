@@ -15,7 +15,7 @@ export class ApiService {
   //   return this.http.get(`${environment.url}${endpoint}`);
   // }
   get(endpoint: string): Observable<any> {
-    console.log(endpoint);
+    console.log('new endpoint');
     return this.http.get(`${environment.url}`);
   }
 }
