@@ -1,11 +1,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const cors = require('cors');
-const corsOptions = {
-    origin: '*',
-    optionsSuccessStatus: 200
-};
+
 const mongoose = require('mongoose');
 const config = require('./config/database');
 
@@ -18,7 +14,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 //Enable CORS Middleware
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 
 
