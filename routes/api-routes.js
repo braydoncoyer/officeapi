@@ -6,7 +6,7 @@ const corsOptions = {
     optionsSuccessStatus: 200
 };
 
-router.use(cors());
+router.use(cors(corsOptions));
 
 // Set default API response
 router.get('/', function (req, res) {
