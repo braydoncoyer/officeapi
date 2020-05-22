@@ -61,14 +61,14 @@ router.route('/episodes/:episode_id')
 
 // Quote Routes
 router.route('/quotes')
-    .get(quoteController.view)
-    .post(quoteController.new);
+    .get(cors(), quoteController.view)
+    .post(cors(), quoteController.new);
 
 router.route('/quotes/random')
-    .get(quoteController.random);
+    .get(cors(), quoteController.random);
 
 router.route('/quotes/:quote_id')
-    .get(quoteController.index);
+    .get(cors(), quoteController.index);
 
 
 
